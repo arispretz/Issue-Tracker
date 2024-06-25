@@ -5,5 +5,5 @@ const BadRequestError = require("./bad-request");
 module.exports = {
   CustomAPIError,
   NotFoundError,
-  BadRequestError
+  BadRequestError,
 };

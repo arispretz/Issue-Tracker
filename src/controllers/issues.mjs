@@ -19,7 +19,7 @@ const getIssues = async (req, res) => {
     created_by: d.created_by,
     assigned_to: d.assigned_to,
     open: d.open,
-    status_text: d.status_text
+    status_text: d.status_text,
   }));
 
   res.status(StatusCodes.OK).json(resp);
@@ -28,7 +28,7 @@ const getIssues = async (req, res) => {
 const createIssue = async (req, res) => {
   req.body.project = req.params.project;
   const {
-    body: { issue_title, issue_text, created_by }
+    body: { issue_title, issue_text, created_by },
   } = req;
 
   if (!issue_title || !issue_text || !created_by) {
@@ -47,7 +47,7 @@ const createIssue = async (req, res) => {
     created_by: issue.created_by,
     assigned_to: issue.assigned_to,
     open: issue.open,
-    status_text: issue.status_text
+    status_text: issue.status_text,
   };
 
   res.status(StatusCodes.CREATED).json(resp);
@@ -62,8 +62,8 @@ const updateIssue = async (req, res) => {
       created_by: c_by,
       assigned_to: a_to,
       status_text: s_te,
-      open: o
-    }
+      open: o,
+    },
   } = req;
 
   const body = {
@@ -73,7 +73,7 @@ const updateIssue = async (req, res) => {
     created_by: c_by,
     assigned_to: a_to,
     status_text: s_te,
-    open: o
+    open: o,
   };
 
   if (!id) {
@@ -126,5 +126,5 @@ module.exports = {
   getIssues,
   createIssue,
   updateIssue,
-  deleteIssue
+  deleteIssue,
 };

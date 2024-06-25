@@ -20,7 +20,7 @@ suite("Functional Tests", function () {
         created_by: "test",
         assigned_to: "test",
         status_text: "test",
-        open: "true"
+        open: "true",
       })
       .end((err, res, body) => {
         if (err) {
@@ -41,7 +41,7 @@ suite("Functional Tests", function () {
       .send({
         issue_title: "test",
         issue_text: "test",
-        created_by: "test"
+        created_by: "test",
       })
       .end((err, res, body) => {
         if (err) {
@@ -114,7 +114,7 @@ suite("Functional Tests", function () {
       .set("content-type", "application/x-www-form-urlencoded")
       .send({
         _id: testId,
-        issue_title: "test2"
+        issue_title: "test2",
       })
       .end((err, res) => {
         if (err || !testId) {
@@ -141,7 +141,7 @@ suite("Functional Tests", function () {
         created_by: "test3",
         assigned_to: "test3",
         status_text: "test3",
-        open: "true"
+        open: "true",
       })
       .end((err, res) => {
         if (err || !testId) {
@@ -162,7 +162,7 @@ suite("Functional Tests", function () {
       .put("/api/issues/apitest")
       .set("content-type", "application/x-www-form-urlencoded")
       .send({
-        issue_title: "test3"
+        issue_title: "test3",
       })
       .end((err, res) => {
         if (err) {
@@ -180,7 +180,7 @@ suite("Functional Tests", function () {
       .put("/api/issues/apitest")
       .set("content-type", "application/x-www-form-urlencoded")
       .send({
-        _id: testId
+        _id: testId,
       })
       .end((err, res) => {
         if (err || !testId) {
@@ -202,7 +202,7 @@ suite("Functional Tests", function () {
       .set("content-type", "application/x-www-form-urlencoded")
       .send({
         _id: `${invalidId}`,
-        issue_text: "test4"
+        issue_text: "test4",
       })
       .end((err, res) => {
         if (err) {
@@ -223,7 +223,7 @@ suite("Functional Tests", function () {
       .delete("/api/issues/apitest")
       .set("content-type", "application/x-www-form-urlencoded")
       .send({
-        _id: testId
+        _id: testId,
       })
       .end((err, res) => {
         if (err) {
@@ -244,7 +244,7 @@ suite("Functional Tests", function () {
       .delete("/api/issues/apitest")
       .set("content-type", "application/x-www-form-urlencoded")
       .send({
-        _id: `${invalidId}`
+        _id: `${invalidId}`,
       })
       .end((err, res) => {
         if (err) {
@@ -276,4 +276,6 @@ suite("Functional Tests", function () {
       });
   });
 });
-after(function() { chai.request(server) .get('/') }); 
+after(function () {
+  chai.request(server).get("/");
+});

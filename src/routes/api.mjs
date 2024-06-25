@@ -4,7 +4,7 @@ const {
   getIssues,
   createIssue,
   updateIssue,
-  deleteIssue
+  deleteIssue,
 } = require("../controllers/issues");
 
 module.exports = function (app) {
